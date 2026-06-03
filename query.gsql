@@ -1,0 +1,52 @@
+USE GRAPH FinancialGraph
+
+CREATE OR REPLACE QUERY get_company_context(STRING company_name) FOR GRAPH FinancialGraph {
+    
+    // Data structures to hold our context
+    ListAccum<STRING> @risk_list;
+    ListAccum<STRING> @competitor_list;
+    ListAccum<STRING> @subsidiary_list;
+    ListAccum<STRING> @executive_list;
+    
+    // 1. Start at the target company
+    Start = {Entity.*};
+    TargetCompany = SELECT s FROM Start:s WHERE s.id == company_name;
+    
+    // 2. Find all direct Subsidiaries and Executives
+    DirectLinks = SELECT t FROM TargetCompany:s -(RELATIONSHIP:e)-> Entity:t
+                  WHERE e.rel_type == "OWNS" OR e.rel_type == "EMPLOYS"
+                  ACCUM 
+                      IF t.entity_type == "Subsidiary" THEN s.@subsidiary_list += t.id END,
+                      IF t.entity_type == "Executive" THEN s.@executive_list += t.id END;
+
+    // 3. Find Risk Factors facing this company
+    CompanyRisks = SELECT t FROM TargetCompany:s -(RELATIONSHIP:e)-> Entity:t
+                   WHERE e.rel_type == "FACES_RISK"
+                   ACCUM s.@risk_list += t.id;
+                   
+    // 4. Advanced Traversal: Find competitors who share the same risk factors
+    // This traverses backwards from the Risks to find other companies.
+    SharedRiskCompetitors = SELECT c FROM CompanyRisks:r -(reverse_RELATIONSHIP:e)-> Entity:c
+                            WHERE c.id != company_name AND e.rel_type == "FACES_RISK"
+                            ACCUM c.@risk_list += r.id; 
+                            
+    // 5. Direct Competitors
+    DirectCompetitors = SELECT t FROM TargetCompany:s -(RELATIONSHIP:e)-> Entity:t
+                        WHERE e.rel_type == "COMPETES_WITH"
+                        ACCUM s.@competitor_list += t.id;
+                        
+    // Print the highly contextualized results for the LLM
+    PRINT TargetCompany [
+        TargetCompany.id,
+        TargetCompany.@risk_list,
+        TargetCompany.@subsidiary_list,
+        TargetCompany.@executive_list,
+        TargetCompany.@competitor_list
+    ];
+    
+    // Print the 2-hop Shared Risk Competitors to give the LLM deep market insight
+    PRINT SharedRiskCompetitors [
+        SharedRiskCompetitors.id,
+        SharedRiskCompetitors.@risk_list
+    ];
+}

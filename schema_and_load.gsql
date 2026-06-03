@@ -1,0 +1,33 @@
+// TigerGraph GSQL Schema & Bulk Loader for Financial Graph
+// Run this in GraphStudio or via GSQL shell.
+
+// 1. Drop existing graph if necessary (Warning: this deletes data)
+// DROP GRAPH FinancialGraph
+
+// 2. Define Schema
+// We use a generalized 'Entity' vertex and 'RELATIONSHIP' edge 
+// to dynamically handle the Gemini extraction output without strict schema limits.
+CREATE VERTEX Entity (PRIMARY_ID id STRING, entity_type STRING) WITH PRIMARY_ID_AS_ATTRIBUTE="true"
+CREATE DIRECTED EDGE RELATIONSHIP (FROM Entity, TO Entity, rel_type STRING)
+
+CREATE GRAPH FinancialGraph (Entity, RELATIONSHIP)
+
+// 3. Define Loading Job
+USE GRAPH FinancialGraph
+
+CREATE LOADING JOB load_financial_graph FOR GRAPH FinancialGraph {
+    // IMPORTANT: Update these paths to where you saved your vertices.csv and edges.csv
+    DEFINE FILENAME v_file = "ANY:/path/to/vertices.csv";
+    DEFINE FILENAME e_file = "ANY:/path/to/edges.csv";
+    
+    // Load Vertices
+    LOAD v_file TO VERTEX Entity VALUES($0, $1) 
+        USING SEPARATOR=",", HEADER="true", EOL="\n", QUOTE="double";
+        
+    // Load Edges
+    LOAD e_file TO EDGE RELATIONSHIP VALUES($0, $1, $2) 
+        USING SEPARATOR=",", HEADER="true", EOL="\n", QUOTE="double";
+}
+
+// 4. Run the Loading Job (Uncomment and run after updating paths above)
+// RUN LOADING JOB load_financial_graph

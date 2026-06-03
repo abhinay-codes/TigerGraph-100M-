@@ -1,0 +1,9 @@
+TigerGraph Hackathon Benchmark Report
+-----------------------------------
+Dataset: winterForestStump/10-K_sec_filings (SEC 10-K Filings)
+Total Tokens: 105,001,658
+Total Documents: 8417
+
+Tokenizer Documentation:
+As per the hackathon requirements, the dataset size was measured using the official Gemini API (`countTokens` endpoint) via the `google-genai` Python SDK. 
+The underlying tokenizer utilized by the API is the official Gemini SentencePiece tokenizer, ensuring exact alignment with the model's actual token usage for processing.

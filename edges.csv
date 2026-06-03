@@ -1,0 +1,503 @@
+source,target,e_type
+TROPICAL SPORTSWEAR INTERNATIONAL CORP.,Savane International Corp.,OWNS
+DATAWATCH CORP,interest rate risk,FACES_RISK
+DATAWATCH CORP,foreign currency exchange rate risk,FACES_RISK
+DATAWATCH CORP,DATAWATCH CORP International Subsidiaries,OWNS
+GALEY & LORD INC.,"Galey & Lord Industries, Inc.",OWNS
+"Galey & Lord Industries, Inc.","G&L Service Company, North America, Inc.",OWNS
+"G&L Service Company, North America, Inc.","Dimmit Industries, S.A. de C.V.",OWNS
+GALEY & LORD INC.,Swift Denim Group,OWNS
+GALEY & LORD INC.,Klopman International Group,OWNS
+GALEY & LORD INC.,"Swift Textiles Europe, Ltd.",OWNS
+"Polymer Group, Inc.","DT Acquisition, Inc.",OWNS
+GALEY & LORD INC.,"competitive and economic factors in the textile, apparel and home furnishings markets",FACES_RISK
+GALEY & LORD INC.,raw materials and other costs,FACES_RISK
+GALEY & LORD INC.,weather-related delays,FACES_RISK
+GALEY & LORD INC.,general economic conditions,FACES_RISK
+MEDIQ Incorporated,"MEDIQ/PRN Life Support Services, Inc.",OWNS
+MEDIQ Incorporated,SpectraCair,OWNS
+MEDIQ Incorporated,"CH Industries, Inc.",OWNS
+MEDIQ Incorporated,"National Patient Care Systems, Inc.",OWNS
+"CH Industries, Inc.","CH Medical, Inc.",OWNS
+"Bruckmann, Rosser, Sherrill & Co., L.P.",MEDIQ Incorporated,OWNS
+"Ferrer Freeman Thompson & Co., LLC",MEDIQ Incorporated,OWNS
+"Galen Partners, III L.P.",MEDIQ Incorporated,OWNS
+Rotko Entities,MEDIQ Incorporated,OWNS
+MEDIQ Incorporated,InnoServ Technologies,OWNS
+MEDIQ Incorporated,Cost Containment Pressures,FACES_RISK
+IEC Electronics Corp.,"Calidad Electronics, Inc.",OWNS
+IEC Electronics Corp.,"IEC - Edinburg Texas, Inc.",OWNS
+IEC Electronics Corp.,"Accutek, Inc.",OWNS
+IEC Electronics Corp.,IEC Arab Alabama Inc.,OWNS
+IEC Electronics Corp.,IEC Electronics - Ireland Limited,OWNS
+MEDIQ Incorporated,"MEDIQ/PRN Life Support Services, Inc.",OWNS
+"MEDIQ/PRN Life Support Services, Inc.","MEDIQ Management Services, Inc.",OWNS
+"MEDIQ/PRN Life Support Services, Inc.",SpectraCair,OWNS
+"MEDIQ/PRN Life Support Services, Inc.","CH Medical, Inc.",OWNS
+"MEDIQ/PRN Life Support Services, Inc.",Increasing pressure to reduce operating costs and capital expenditures,FACES_RISK
+"MEDIQ/PRN Life Support Services, Inc.",Cost containment pressures on health care providers,FACES_RISK
+"MEDIQ/PRN Life Support Services, Inc.",Reduced reimbursement levels by Medicare and other third-party payors,FACES_RISK
+"MEDIQ/PRN Life Support Services, Inc.",Legislative proposals leading to health care consolidations and managed care acceleration,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,CapTrust,OWNS
+INTERSTATE JOHNSON LANE INC.,Highly Competitive Environment,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Marketplace Trading Volumes Volatility,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Interest Rate Conditions Volatility,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Revenue and Earnings Variability,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Significant Incremental Cash Requirements,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,"Regulatory Liquidity and Capital Requirements (SEC, CFTC, NYSE)",FACES_RISK
+CapTrust,"Regulatory Liquidity and Capital Requirements (SEC, NASD)",FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Year 2000 Technological Challenge,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Dependence on Third-Party Systems for Year 2000 Compliance,FACES_RISK
+INTERSTATE JOHNSON LANE INC.,Inflationary Effects,FACES_RISK
+"Flanigan's Enterprises, Inc.","Flanigan's Management Services, Inc.",OWNS
+"Flanigan's Enterprises, Inc.","Flanigan's Enterprises, Inc. of Georgia",OWNS
+"Flanigan's Enterprises, Inc.",Seventh Street Corp.,OWNS
+"Flanigan's Enterprises, Inc.",Big Daddy's #48 Inc.,OWNS
+"Flanigan's Enterprises, Inc.","Flanigan's Enterprises, Inc. of Pa.",OWNS
+"Flanigan's Enterprises, Inc.",Bankruptcy,FACES_RISK
+Subchapter S corporation (franchisee),Chairman of the Board,EMPLOYS
+TCI INTERNATIONAL INC.,Broadcast and Communications Division,OWNS
+TCI INTERNATIONAL INC.,Signal Processing Division,OWNS
+TCI INTERNATIONAL INC.,Test and Measurement Division,OWNS
+TCI INTERNATIONAL INC.,Potential Loss from Operations in Fiscal 1999,FACES_RISK
+TCI INTERNATIONAL INC.,Contract Termination Risk,FACES_RISK
+TCI INTERNATIONAL INC.,Reduced US Government Demand (Post-Cold War),FACES_RISK
+TCI INTERNATIONAL INC.,"Declining Economies in Asia, Africa, Middle East",FACES_RISK
+TCI INTERNATIONAL INC.,Strong US Dollar Impacting Competitiveness,FACES_RISK
+TCI INTERNATIONAL INC.,Delay/Loss of Key Program Awards,FACES_RISK
+TCI INTERNATIONAL INC.,Delays in System Acceptance due to Customer Turnover,FACES_RISK
+TCI INTERNATIONAL INC.,Foreign Competitors,COMPETES_WITH
+Spartech Corporation,Spartech Plastics,OWNS
+Spartech Corporation,Spartech Polycom,OWNS
+Spartech Corporation,Spartech Color,OWNS
+Spartech Corporation,Spartech Vy-Cal Plastics,OWNS
+Spartech Corporation,GenPak,OWNS
+Spartech Corporation,Hamelin Industries,OWNS
+Spartech Corporation,Spartech Profiles,OWNS
+Spartech Corporation,Product Components,OWNS
+Spartech Corporation,Pawnee Industries,OWNS
+Spartech Corporation,Portage Industries,OWNS
+Spartech Corporation,Hamelin Group,OWNS
+Spartech Corporation,Preferred Plastic Sheet Division of Echlin Inc.,OWNS
+Echlin Inc.,Preferred Plastic Sheet Division of Echlin Inc.,OWNS
+Spartech Corporation,"Polycom Huntsman, Inc.",OWNS
+Spartech Corporation,"Prismaplast Canada, Ltd.",OWNS
+Spartech Corporation,"Anjac-Doron Plastics, Inc.",OWNS
+"CMG Information Services, Inc.",ADSmart Corporation,OWNS
+"CMG Information Services, Inc.","Engage Technologies, Inc.",OWNS
+"CMG Information Services, Inc.","Accipiter, Inc.",OWNS
+"CMG Information Services, Inc.",InfoMation Publishing Corporation,OWNS
+"CMG Information Services, Inc.",NaviSite Internet Services Corporation,OWNS
+"CMG Information Services, Inc.",Planet Direct Corporation,OWNS
+"CMG Information Services, Inc.",Password Internet Publishing Corporation,OWNS
+"CMG Information Services, Inc.","Magnitude Network, LLC",OWNS
+"CMG Information Services, Inc.","Open Market, Inc.",OWNS
+"CMG Information Services, Inc.",NaviNet,OWNS
+"CMG Information Services, Inc.","CMG@Ventures I, LLC",OWNS
+"CMG@Ventures I, LLC","Blaxxun Interactive, Inc.",OWNS
+"CMG@Ventures I, LLC",GeoCities,OWNS
+"CMG@Ventures I, LLC","Lycos, Inc.",OWNS
+"CMG@Ventures I, LLC",Parable LLC,OWNS
+"CMG@Ventures I, LLC",Vicinity Corporation,OWNS
+"CMG Information Services, Inc.","CMG@Ventures II, LLC",OWNS
+"CMG@Ventures II, LLC",Chemdex Corporation,OWNS
+"CMG@Ventures II, LLC",Critical Path,OWNS
+"CMG@Ventures II, LLC",GeoCities,OWNS
+"CMG@Ventures II, LLC","KOZ, Inc.",OWNS
+"CMG@Ventures II, LLC","Mother Nature's General Store, Inc.",OWNS
+"CMG@Ventures II, LLC",Parable LLC,OWNS
+"CMG@Ventures II, LLC","Reel.com, Inc.",OWNS
+"CMG@Ventures II, LLC","Sage Enterprises, Inc.",OWNS
+"CMG@Ventures II, LLC","Silknet Software, Inc.",OWNS
+"CMG@Ventures II, LLC","Softway Systems, Inc.",OWNS
+"CMG@Ventures II, LLC",Speech Machines plc,OWNS
+"CMG@Ventures II, LLC",TicketsLive Corporation,OWNS
+"CMG@Ventures II, LLC",Universal Learning Technology,OWNS
+"CMG@Ventures II, LLC",Visto Corporation,OWNS
+"CMG Information Services, Inc.","CMG@Ventures III, LLC",OWNS
+"CMG Information Services, Inc.",SalesLink Corporation,OWNS
+"CMG Information Services, Inc.",InSolutions Incorporated,OWNS
+"CMG Information Services, Inc.","On-Demand Solutions, Inc.",OWNS
+SalesLink Corporation,Pacific Direct Marketing Corporation,OWNS
+"CMG Information Services, Inc.",CMG Direct Corporation,OWNS
+Planet Direct Corporation,InfoMation Publishing Corporation,OWNS
+"Amazon.com, Inc.","Sage Enterprises, Inc.",OWNS
+Hollywood Entertainment Corporation,"Reel.com, Inc.",OWNS
+Salex Holding Corporation,Pershing Sun,EMPLOYS
+"Sun Associates, LLC",Betty Sun,EMPLOYS
+Salex Holding Corporation,competition in the automobile asset management business,FACES_RISK
+Salex Holding Corporation,inability to obtain additional financing,FACES_RISK
+Salex Holding Corporation,general business and economic conditions,FACES_RISK
+Salex Holding Corporation,PH&H Corp.,COMPETES_WITH
+Salex Holding Corporation,GE Capital,COMPETES_WITH
+Franklin Receivables LLC,Franklin Auto Trust 1998-1,OWNS
+IEC Electronics Corp.,"Calidad Electronics, Inc.",OWNS
+IEC Electronics Corp.,"IEC - Edinburg Texas, Inc.",OWNS
+IEC Electronics Corp.,"Accutek, Inc.",OWNS
+IEC Electronics Corp.,IEC Arab Alabama Inc.,OWNS
+IEC Electronics Corp.,IEC Electronics - Ireland Limited,OWNS
+"RICA FOODS, INC.",Pipasa,OWNS
+"RICA FOODS, INC.",As de Oros,OWNS
+"RICA FOODS, INC.",Mr. Calixto Chaves,EMPLOYS
+"Inversiones La Ribera, S.A.",Pipasa,OWNS
+"Comercial Angui, S.A.",As de Oros,OWNS
+Antonio Echeverria,"Comercial Angui, S.A.",OWNS
+As de Oros,Restaurantes As de Oros,OWNS
+"RICA FOODS, INC.",Exchange Rate Risk,FACES_RISK
+"RICA FOODS, INC.",Foreign Competition,FACES_RISK
+"RICA FOODS, INC.",Commodity Price Volatility,FACES_RISK
+Pipasa,As de Oros,COMPETES_WITH
+GLOBAL ENVIRONMENTAL CORP.,Danzer,OWNS
+GLOBAL ENVIRONMENTAL CORP.,Weakened Financial Condition,FACES_RISK
+GLOBAL ENVIRONMENTAL CORP.,Tighter Credit Terms,FACES_RISK
+GLOBAL ENVIRONMENTAL CORP.,Need for Capital Infusion,FACES_RISK
+GLOBAL ENVIRONMENTAL CORP.,Dependency on Future Success,FACES_RISK
+GLOBAL ENVIRONMENTAL CORP.,Year 2000 Problem,FACES_RISK
+GLOBAL ENVIRONMENTAL CORP.,Major Service Provider System Failure,FACES_RISK
+MATLACK SYSTEMS INC.,Competitive Labor Environment,FACES_RISK
+MATLACK SYSTEMS INC.,Increased Environmental Compliance Costs,FACES_RISK
+MATLACK SYSTEMS INC.,Legal Action Settlement,FACES_RISK
+MATLACK SYSTEMS INC.,Potential Change in Ownership,FACES_RISK
+MATLACK SYSTEMS INC.,High Debt Levels,FACES_RISK
+MATLACK SYSTEMS INC.,Declining Demand for Transport,FACES_RISK
+MATLACK SYSTEMS INC.,General Economic Conditions,FACES_RISK
+MATLACK SYSTEMS INC.,Competitive Pressures,FACES_RISK
+MATLACK SYSTEMS INC.,Market Demand Shifts,FACES_RISK
+MATLACK SYSTEMS INC.,Industry Performance and Needs,FACES_RISK
+MATLACK SYSTEMS INC.,Equipment Utilization Challenges,FACES_RISK
+MATLACK SYSTEMS INC.,New Service Development Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Increased Labor Costs,FACES_RISK
+MATLACK SYSTEMS INC.,Increased Operating Costs,FACES_RISK
+MATLACK SYSTEMS INC.,Litigation Uncertainties,FACES_RISK
+MATLACK SYSTEMS INC.,Financing Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Insurance Availability Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Project Completion Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Management Retention Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Regulatory Changes,FACES_RISK
+MATLACK SYSTEMS INC.,Y2K Compliance Risk,FACES_RISK
+MATLACK SYSTEMS INC.,Satellite System Failure,FACES_RISK
+MATLACK SYSTEMS INC.,Business Partner Y2K Compliance Risk,FACES_RISK
+ING Groep N.V.,"PFHI Holdings, Inc.",OWNS
+ING Groep N.V.,"Equitable of Iowa Companies, Inc.",OWNS
+"Equitable of Iowa Companies, Inc.",Equitable Life Insurance Company of Iowa,OWNS
+"Equitable of Iowa Companies, Inc.",Golden American,OWNS
+"Equitable of Iowa Companies, Inc.","Locust Street Securities, Inc.",OWNS
+"Equitable of Iowa Companies, Inc.","Equitable Investment Services, Inc.",OWNS
+"Equitable of Iowa Companies, Inc.","Directed Services, Inc.",OWNS
+"Equitable of Iowa Companies, Inc.",Equitable of Iowa Companies Capital Trust,OWNS
+"Equitable of Iowa Companies, Inc.",Equitable of Iowa Companies Capital Trust II,OWNS
+"Equitable of Iowa Companies, Inc.","Equitable of Iowa Securities Network, Inc.",OWNS
+Golden American,First Golden American Life Insurance Co of New York,OWNS
+First Golden American Life Insurance Co of New York,Discontinuation of sales relationship by significant distributor,FACES_RISK
+First Golden American Life Insurance Co of New York,Changes in acquisition cost allocation,FACES_RISK
+First Golden American Life Insurance Co of New York,Impairment of goodwill,FACES_RISK
+First Golden American Life Insurance Co of New York,Variability in amortization based on allocation and assumptions,FACES_RISK
+First Golden American Life Insurance Co of New York,Risk of loss from below investment grade securities,FACES_RISK
+First Golden American Life Insurance Co of New York,Sensitivity of below investment grade securities to adverse economic conditions,FACES_RISK
+First Golden American Life Insurance Co of New York,Future write-downs of securities,FACES_RISK
+First Golden American Life Insurance Co of New York,Material adverse effect on net income from significant write-downs,FACES_RISK
+IEC Electronics Corp.,"IEC - Edinburg Texas, Inc.",OWNS
+IEC Electronics Corp.,IEC Arab Alabama Inc.,OWNS
+IEC Electronics Corp.,IEC Electronics - Ireland Limited,OWNS
+RESOURCE AMERICA INC.,Resource Asset Investment Trust,OWNS
+RESOURCE AMERICA INC.,"The Atlas Group, Inc.",OWNS
+"Hynes & Howes Insurance Counselors, Inc.",Highly Competitive Market,FACES_RISK
+"Hynes & Howes Insurance Counselors, Inc.",Davenport Agency,OWNS
+Ralph Parry Insurance Agency Ltd.,Davenport Agency,OWNS
+"R.A.P. Enterprises, Inc.",Viking Agency,OWNS
+"R.A.P. Enterprises, Inc.","Hansen and Hansen, Inc.",OWNS
+"Hynes & Howes Insurance Counselors, Inc.",Ralph A. Parry,EMPLOYS
+Davenport Agency,Ralph A. Parry,EMPLOYS
+"R.A.P. Enterprises, Inc.",Ralph A. Parry,EMPLOYS
+Ralph A. Parry,"R.A.P. Enterprises, Inc.",OWNS
+Ralph A. Parry,Ralph Parry Insurance Agency Ltd.,OWNS
+"Hynes & Howes Insurance Counselors, Inc.",Low Liquidity,FACES_RISK
+"Hynes & Howes Insurance Counselors, Inc.",Decreased Operating Income,FACES_RISK
+VSI HOLDINGS INC.,The Performance Systems Group,OWNS
+VSI HOLDINGS INC.,"Advanced Animations, Inc.",OWNS
+VSI HOLDINGS INC.,"BKNT Retail Stores, Inc.",OWNS
+VSI HOLDINGS INC.,"Vispac, Inc.",OWNS
+VSI HOLDINGS INC.,"Visual Services, Inc.",OWNS
+VSI HOLDINGS INC.,"Steve Toth, Jr.",EMPLOYS
+VSI HOLDINGS INC.,Difficulty in recruiting qualified employees,FACES_RISK
+VSI HOLDINGS INC.,Loss of major customers,FACES_RISK
+VSI HOLDINGS INC.,Uncertainty of continued customer relationships,FACES_RISK
+Irvine Sensors Corporation,"Novalog, Inc.",OWNS
+Irvine Sensors Corporation,"MicroSensors, Inc.",OWNS
+Irvine Sensors Corporation,"Imagek, Inc.",OWNS
+"Imagek, Inc.",Uncertainty of Imagek financing,FACES_RISK
+Irvine Sensors Corporation,Uncertainty of widespread market success for stacked memory products,FACES_RISK
+Irvine Sensors Corporation,Cost disadvantage due to unestablished high volume production costs,FACES_RISK
+Irvine Sensors Corporation,Uncertainty of neural network chip set development success,FACES_RISK
+Irvine Sensors Corporation,Uncertainty of NeoStack commercialization timeline,FACES_RISK
+"General DataComm Industries, Inc.",VITAL Network Services LLC,OWNS
+RADIATION DISPOSAL SYSTEMS INC.,Manuel E. Kane,EMPLOYS
+RADIATION DISPOSAL SYSTEMS INC.,Albert D. Kane,EMPLOYS
+RADIATION DISPOSAL SYSTEMS INC.,Steven Kane,EMPLOYS
+"Steven M. Kane, Inc.",Steven Kane,EMPLOYS
+RADIATION DISPOSAL SYSTEMS INC.,Inability to Market Products,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Lack of Significant Revenues,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Cessation of Operations,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Lack of Working Capital and Revenue Prospects,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Uncertainty of Future Operations,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Limited Market Acceptance of Ozone Technology,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Undeveloped Market for Waste Treatment Technology,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Competition from Established Firms,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Negligible Market Position,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Ineffective Sales Agreements,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Inactive Marketing Efforts,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Insufficient Production Personnel,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Supplier Dependence and Production Delays,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Single Source Supplier Dependence (Pillar),FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Lapse of Patents due to Insufficient Funds,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Burdensome Environmental Regulations,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,High Cost of Radioactive Waste Disposal,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Uneconomical Process,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Costly Regulatory Modifications and Insufficient Funds,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Future Adverse Government Regulations,FACES_RISK
+RADIATION DISPOSAL SYSTEMS INC.,Ultrox International,COMPETES_WITH
+RADIATION DISPOSAL SYSTEMS INC.,Para Oxidation,COMPETES_WITH
+RADIATION DISPOSAL SYSTEMS INC.,PCI Ozone Corporation,COMPETES_WITH
+RADIATION DISPOSAL SYSTEMS INC.,"Griffin Technics, Inc.",COMPETES_WITH
+RADIATION DISPOSAL SYSTEMS INC.,Henkel Corporation,COMPETES_WITH
+RADIATION DISPOSAL SYSTEMS INC.,"Brown-Bovari, Inc.",COMPETES_WITH
+"Stein Management Company, Inc.",Randy Rieger,EMPLOYS
+RTL Realty,Randy Rieger,EMPLOYS
+"Royal Palm Beach Colony, Limited Partnership",Uncertainty of future cash distribution,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Reduction in sales revenues,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Cash requirements for land development,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Cash expenditures for transactions and operations,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Bank financing repayment obligations,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Increased cost due to regulatory changes,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Highly competitive real estate market,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Competition affecting property sales,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Cyclical real estate market,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Interest rate increases,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Uncertain South Florida real estate market conditions,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Competition from other developers in South Florida,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Litigation over building permits,FACES_RISK
+"Royal Palm Beach Colony, Limited Partnership",Contingent land sales,FACES_RISK
+"Mesa Air Group, Inc.","Mesa Airlines, Inc.",OWNS
+"Mesa Air Group, Inc.","Air Midwest, Inc.",OWNS
+"Mesa Air Group, Inc.","WestAir Holdings, Inc.",OWNS
+"Mesa Air Group, Inc.","MPD, Inc.",OWNS
+"Mesa Air Group, Inc.","FCA, Inc.",OWNS
+"Mesa Air Group, Inc.","Mesa Leasing, Inc.",OWNS
+"Mesa Air Group, Inc.","MAGI Insurance, Ltd.",OWNS
+"WestAir Holdings, Inc.","WestAir Commuter Airlines, Inc.",OWNS
+"WestAir Holdings, Inc.","Regional Aircraft Services, Inc.",OWNS
+"Mesa Air Group, Inc.",Termination of Code-Sharing Agreements,FACES_RISK
+"Mesa Air Group, Inc.","CCAIR, Inc.",COMPETES_WITH
+"Mesa Air Group, Inc.",Great Lakes Aviation,COMPETES_WITH
+"Mesa Air Group, Inc.",SkyWest Airlines,COMPETES_WITH
+"Mesa Air Group, Inc.",United Airlines,COMPETES_WITH
+"Tidel Technologies, Inc.","Tidel Engineering, Inc.",OWNS
+"Tidel Technologies, Inc.",3CI Complete Compliance Corporation,OWNS
+"Tidel Technologies, Inc.","Diebold, Incorporated",COMPETES_WITH
+"Tidel Technologies, Inc.",NCR Corporation,COMPETES_WITH
+"Tidel Technologies, Inc.","Triton Systems, Inc.",COMPETES_WITH
+"Tidel Technologies, Inc.",Fujitsu Corporation,COMPETES_WITH
+"Tidel Technologies, Inc.",Siemens-Nixdorf,COMPETES_WITH
+"Tidel Technologies, Inc.",NKL Industries,COMPETES_WITH
+"Tidel Technologies, Inc.",McGunn Safe Company,COMPETES_WITH
+"Tidel Technologies, Inc.",Armor Safe Company,COMPETES_WITH
+"Tidel Technologies, Inc.",AutoVend,COMPETES_WITH
+"Tidel Technologies, Inc.",Inadequate Patent Protection,FACES_RISK
+"Tidel Technologies, Inc.",Patent Challenge Risk,FACES_RISK
+"Tidel Technologies, Inc.",Patent Infringement Risk,FACES_RISK
+"Tidel Technologies, Inc.",Third-Party Patent Rights Impact,FACES_RISK
+"Tidel Technologies, Inc.",Competitor Patent Acquisition,FACES_RISK
+"Tidel Technologies, Inc.",Trade Secret Loss,FACES_RISK
+3CI Complete Compliance Corporation,"Springhill, Louisiana Facility",OWNS
+3CI Complete Compliance Corporation,"Birmingham, Alabama Location",OWNS
+3CI Complete Compliance Corporation,Technological Obsolescence,FACES_RISK
+"Biocontrol Technology, Inc.","Diasense, Inc.",OWNS
+"Diasense, Inc.",Delays in FDA Marketing Approval,FACES_RISK
+"Biocontrol Technology, Inc.",Delays in FDA Marketing Approval,FACES_RISK
+"Diasense, Inc.",Uncertainty of Future Funding,FACES_RISK
+"Biocontrol Technology, Inc.",Uncertainty of Future Funding,FACES_RISK
+"Diasense, Inc.","Reliance on Biocontrol Technology, Inc.",FACES_RISK
+"Diasense, Inc.",Competition and Product Obsolescence,FACES_RISK
+"Biocontrol Technology, Inc.",Competition and Product Obsolescence,FACES_RISK
+"Diasense, Inc.",Dependence on Single Technology,FACES_RISK
+"Diasense, Inc.",Continued Operating Losses and Negative Net Worth,FACES_RISK
+"Biocontrol Technology, Inc.",Continued Operating Losses and Negative Net Worth,FACES_RISK
+"Diasense, Inc.",Potential Conflicts of Interest,FACES_RISK
+"Biocontrol Technology, Inc.",Potential Conflicts of Interest,FACES_RISK
+"Diasense, Inc.","Risks to Patents, Trademarks, and Licenses",FACES_RISK
+"Biocontrol Technology, Inc.","Risks to Patents, Trademarks, and Licenses",FACES_RISK
+"Diasense, Inc.",Uncertainty of Third-Party Payor Reimbursement,FACES_RISK
+"Biocontrol Technology, Inc.",Uncertainty of Third-Party Payor Reimbursement,FACES_RISK
+"Diasense, Inc.","Limited Sales, Marketing, and Manufacturing Experience",FACES_RISK
+"Biocontrol Technology, Inc.","Limited Sales, Marketing, and Manufacturing Experience",FACES_RISK
+"Diasense, Inc.",Difficulty Attracting and Retaining Key Employees,FACES_RISK
+"Biocontrol Technology, Inc.",Difficulty Attracting and Retaining Key Employees,FACES_RISK
+"Diasense, Inc.",Product Liability,FACES_RISK
+"Biocontrol Technology, Inc.",Product Liability,FACES_RISK
+"Diasense, Inc.",Uncertain Outcome of Pending Lawsuits,FACES_RISK
+"Biocontrol Technology, Inc.",Uncertain Outcome of Pending Lawsuits,FACES_RISK
+"Diasense, Inc.",Absence of Public Market for Common Stock,FACES_RISK
+"Diasense, Inc.",Control by Existing Shareholders,FACES_RISK
+"Diasense, Inc.",Dilution of Common Stock,FACES_RISK
+"Diasense, Inc.",Limited Marketability of Diasensorr 1000,FACES_RISK
+"Diasense, Inc.",Cash Flow Problems,FACES_RISK
+"Diasense, Inc.",Slowed Testing Pace,FACES_RISK
+"Diasense, Inc.",Necessity of FDA Approval for US Market,FACES_RISK
+"Biocontrol Technology, Inc.",Necessity of FDA Approval for US Market,FACES_RISK
+"Diasense, Inc.",Regulatory Process for Diasensorr 2000,FACES_RISK
+"Biocontrol Technology, Inc.",Regulatory Process for Diasensorr 2000,FACES_RISK
+"Diasense, Inc.",High Sales Price Limiting Sales,FACES_RISK
+STARCRAFT CORP /IN/,"Imperial Automotive Group, Inc.",OWNS
+STARCRAFT CORP /IN/,National Mobility Corporation,OWNS
+STARCRAFT CORP /IN/,"Starcraft Automotive Group, Inc.",OWNS
+STARCRAFT CORP /IN/,"Tecstar, Inc.",OWNS
+"Imperial Automotive Group, Inc.","Imperial Industries, Inc.",OWNS
+STARCRAFT CORP /IN/,Increased popularity of SUVs and factory minivans,FACES_RISK
+STARCRAFT CORP /IN/,Price pressure from higher chassis costs,FACES_RISK
+STARCRAFT CORP /IN/,Lower conversion inventory on dealer lots,FACES_RISK
+STARCRAFT CORP /IN/,Fewer automotive dealers selling conversion products,FACES_RISK
+STARCRAFT CORP /IN/,Changing level of dealer support,FACES_RISK
+STARCRAFT CORP /IN/,Strengthening of the U.S. dollar,FACES_RISK
+STARCRAFT CORP /IN/,Financial turmoil in Asian markets,FACES_RISK
+STARCRAFT CORP /IN/,Cyclical nature of the conversion industry,FACES_RISK
+STARCRAFT CORP /IN/,Consumer preferences for sport utility vehicles,FACES_RISK
+STARCRAFT CORP /IN/,Level of disposable consumer income,FACES_RISK
+STARCRAFT CORP /IN/,Availability and price of gasoline,FACES_RISK
+STARCRAFT CORP /IN/,Level of interest rates and availability of consumer financing,FACES_RISK
+STARCRAFT CORP /IN/,Decline in general economic conditions or consumer confidence,FACES_RISK
+STARCRAFT CORP /IN/,Dependence on OEMs for vehicle chassis,FACES_RISK
+STARCRAFT CORP /IN/,Decline in the conversion industry and Company sales,FACES_RISK
+"CMG Information Services, Inc.",ADSmart Corporation,OWNS
+"CMG Information Services, Inc.","Engage Technologies, Inc.",OWNS
+"CMG Information Services, Inc.","Accipiter, Inc.",OWNS
+"CMG Information Services, Inc.",InfoMation Publishing Corporation,OWNS
+"CMG Information Services, Inc.",NaviSite Internet Services Corporation,OWNS
+"CMG Information Services, Inc.",Planet Direct Corporation,OWNS
+"CMG Information Services, Inc.",Password Internet Publishing Corporation,OWNS
+"CMG Information Services, Inc.","Magnitude Network, LLC",OWNS
+"CMG Information Services, Inc.","Open Market, Inc.",OWNS
+"CMG Information Services, Inc.","CMG@Ventures I, LLC",OWNS
+"CMG@Ventures I, LLC","Blaxxun Interactive, Inc.",OWNS
+"CMG@Ventures I, LLC",GeoCities,OWNS
+"CMG@Ventures I, LLC","Lycos, Inc.",OWNS
+"CMG@Ventures I, LLC",Parable LLC,OWNS
+"CMG@Ventures I, LLC",Vicinity Corporation,OWNS
+"CMG Information Services, Inc.","CMG@Ventures II, LLC",OWNS
+"CMG@Ventures II, LLC",Chemdex Corporation,OWNS
+"CMG@Ventures II, LLC",Critical Path,OWNS
+"CMG@Ventures II, LLC",GeoCities,OWNS
+"CMG@Ventures II, LLC","KOZ, Inc.",OWNS
+"CMG@Ventures II, LLC","Mother Nature's General Store, Inc.",OWNS
+"CMG@Ventures II, LLC",Parable LLC,OWNS
+"CMG@Ventures II, LLC","Reel.com, Inc.",OWNS
+"CMG@Ventures II, LLC","Sage Enterprises, Inc.",OWNS
+"CMG@Ventures II, LLC","Silknet Software, Inc.",OWNS
+"CMG@Ventures II, LLC","Softway Systems, Inc.",OWNS
+"CMG@Ventures II, LLC",Speech Machines plc,OWNS
+"CMG@Ventures II, LLC",TicketsLive Corporation,OWNS
+"CMG@Ventures II, LLC",Universal Learning Technology,OWNS
+"CMG@Ventures II, LLC",Visto Corporation,OWNS
+"CMG Information Services, Inc.","CMG@Ventures III, LLC",OWNS
+"CMG Information Services, Inc.","@Ventures III, L.P.",OWNS
+"CMG Information Services, Inc.",SalesLink Corporation,OWNS
+"CMG Information Services, Inc.",InSolutions Incorporated,OWNS
+"CMG Information Services, Inc.","On-Demand Solutions, Inc.",OWNS
+SalesLink Corporation,Pacific Direct Marketing Corporation,OWNS
+"CMG Information Services, Inc.",CMG Direct Corporation,OWNS
+"CMG Information Services, Inc.",NaviNet,OWNS
+Covol Technologies Inc.,Inability to implement applications profitably,FACES_RISK
+Covol Technologies Inc.,Inability to utilize tax benefits,FACES_RISK
+Covol Technologies Inc.,Feedstock supply risk,FACES_RISK
+Covol Technologies Inc.,Production quality risk,FACES_RISK
+Covol Technologies Inc.,Product marketing risk,FACES_RISK
+"Lynton Group, Inc.","Ramapo Helicopters, Inc.",OWNS
+"Lynton Group, Inc.","Lynton Aircraft Maintenance Services, Inc.",OWNS
+"Lynton Group, Inc.","Rockland Aviation, Inc.",OWNS
+"Lynton Group, Inc.","Lynton Aviation Charter, Inc.",OWNS
+"Lynton Group, Inc.","LynStar Holdings, Inc.",OWNS
+"LynStar Holdings, Inc.","LynStar Aviation, Inc.",OWNS
+"Lynton Group, Inc.",Lynton Group Limited,OWNS
+Lynton Group Limited,Lynton Aviation Limited,OWNS
+"Lynton Group, Inc.",European Helicopters Limited,OWNS
+Lynton Group Limited,Magec Aviation Limited,OWNS
+Lynton Group Limited,Air Hanson Limited,OWNS
+"Lynton Group, Inc.","Lynton Jet Centre, Inc.",OWNS
+"Lynton Group, Inc.","Lynton Aviation, Inc.",OWNS
+"Lynton Group, Inc.","Lynton Aviation Services, Inc.",OWNS
+"Lynton Group, Inc.",Dollar Air Services Limited,OWNS
+Dollar Air Services Limited,Black Isle Helicopters Limited,OWNS
+"Lynton Group, Inc.",Black Isle Helicopters Limited,OWNS
+"Lynton Jet Centre, Inc.","Lynton Properties, Inc.",OWNS
+"Lynton Group, Inc.",PLM Dollar Group Limited,OWNS
+Air Hanson Limited,Air Hanson Engineering Limited,OWNS
+Air Hanson Limited,Air Hanson Aircraft Sales Limited,OWNS
+European Helicopters Limited,Loss of CAA/Manufacturer Certificates/Licenses for EHL/Air Hanson Engineering,FACES_RISK
+Air Hanson Engineering Limited,Loss of CAA/Manufacturer Certificates/Licenses for EHL/Air Hanson Engineering,FACES_RISK
+Magec Aviation Limited,Loss of CAA/Manufacturer Certificates/Licenses for Magec,FACES_RISK
+"General Automation, Inc.",General Automation LLC,OWNS
+"General Automation, Inc.",General Automation Canada Subsidiary,OWNS
+"General Automation, Inc.",General Automation Australia Subsidiary,OWNS
+"General Automation, Inc.",General Automation UK Subsidiary,OWNS
+"General Automation, Inc.",Going Concern Qualification,FACES_RISK
+"General Automation, Inc.",Recent Operating Losses,FACES_RISK
+"General Automation, Inc.",Deficit Net Worth,FACES_RISK
+"General Automation, Inc.",Working Capital Deficiency,FACES_RISK
+"General Automation, Inc.",Cash Flow Constraints,FACES_RISK
+"General Automation, Inc.",Obligations to TMI in Default,FACES_RISK
+"General Automation, Inc.",Obligations to Boundless in Default,FACES_RISK
+"General Automation, Inc.",Limited Market for the Company's Stock,FACES_RISK
+"General Automation, Inc.",Competition Risk,FACES_RISK
+"General Automation, Inc.",Wang,COMPETES_WITH
+"General Automation, Inc.",AT&T,COMPETES_WITH
+"General Automation, Inc.",IBM,COMPETES_WITH
+"General Automation, Inc.",Data General Corporation,COMPETES_WITH
+"General Automation, Inc.",Digital Equipment Corporation,COMPETES_WITH
+"General Automation, Inc.",Hewlett Packard Company,COMPETES_WITH
+"General Automation, Inc.",Ardent,COMPETES_WITH
+"General Automation, Inc.",Pick Systems,COMPETES_WITH
+Boundless Technologies,General Automation LLC,OWNS
+RCM TECHNOLOGIES INC.,The Consortium,OWNS
+RCM TECHNOLOGIES INC.,"The Consortium of Maryland, Inc.",OWNS
+RCM TECHNOLOGIES INC.,"Performance Staffing, Inc.",OWNS
+RCM TECHNOLOGIES INC.,"Programming Alternatives of Minnesota, Inc.",OWNS
+"Biomune Systems, Inc.","Optim Nutrition, Inc.",OWNS
+"Biomune Systems, Inc.","Rockwood Companies, LLC",OWNS
+"Biomune Systems, Inc.","Frank A. Eldredge, Ph.D.",EMPLOYS
+"Biomune Systems, Inc.","David O. Lucas, Ph.D.",EMPLOYS
+"Biomune Systems, Inc.","Craig D. Moffat, M.D.",EMPLOYS
+"Biomune Systems, Inc.",Limited access to funding for future research and development,FACES_RISK
+"Biomune Systems, Inc.",Highly competitive market for nutrition supplements,FACES_RISK
+"Biomune Systems, Inc.",Limited financial resources,FACES_RISK
+"Biomune Systems, Inc.",Risk of reduced ownership interest in Rockwood due to unfulfilled loan covenants,FACES_RISK
+"Biomune Systems, Inc.",Inability to obtain additional financing,FACES_RISK
+"Biomune Systems, Inc.",Inability to increase product sales,FACES_RISK
+Mobil Corp.,Mobil (German Operating Company),OWNS
+Exxon Corp.,German Subsidiaries of Exxon Corp.,OWNS
+Royal Dutch Group,German Subsidiaries of Royal Dutch Group,OWNS
+NORTH EUROPEAN OIL ROYALTY TRUST,John H. Van Kirk,EMPLOYS
+NORTH EUROPEAN OIL ROYALTY TRUST,John R. Van Kirk,EMPLOYS
+NORTH EUROPEAN OIL ROYALTY TRUST,Termination of Royalty Rights,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Speculative Business,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Uncertainty of Future Income,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Fluctuations in Gas and Oil Prices/Supplies,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Environmental Regulations Impact,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Unforeseeable Economic and Political Factors,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Currency Exchange Rate Fluctuations,FACES_RISK
+NORTH EUROPEAN OIL ROYALTY TRUST,Y2K Computer Compliance Issues,FACES_RISK
+Celsion Corporation,Dr. Gerald Wolf,EMPLOYS
+Celsion Corporation,Difficulty delivering controlled heat without burning healthy tissue,FACES_RISK
+Celsion Corporation,Need for new FDA indication for breast tumor ablation,FACES_RISK
+Pentech International Inc.,Sawdust Pencil Co.,OWNS
+Pentech International Inc.,Product Shortages,FACES_RISK
+Pentech International Inc.,Dumping Duties,FACES_RISK
+Pentech International Inc.,Increased Raw Material Costs,FACES_RISK
+Pentech International Inc.,Increased Dumping Duties,FACES_RISK
+Pentech International Inc.,Minimum Royalty Payments Leading to Losses,FACES_RISK
+Pentech International Inc.,Loss of Major Customer,FACES_RISK
+Pentech International Inc.,Bad Debts from Customers,FACES_RISK
+Pentech International Inc.,Failure to Register Trademarks,FACES_RISK
+Pentech International Inc.,Intense Competition,FACES_RISK
+Pentech International Inc.,Bic Pen Company,COMPETES_WITH
+Pentech International Inc.,Papermate,COMPETES_WITH
+Pentech International Inc.,"RoseArt Industries, Inc.",COMPETES_WITH
+Pentech International Inc.,Newell,COMPETES_WITH
