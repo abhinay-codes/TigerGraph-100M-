@@ -962,7 +962,8 @@ Chunk 3: Culinary vs Scientific definitions. In practical terms, the definition 
       log(`P3 → Calling local Python Backend (/api/rag) for TigerGraph + Gemini magic`, '');
       const t0 = Date.now();
       
-      const res = await fetch('/api/rag', {
+      // REPLACE 'https://YOUR-BACKEND.onrender.com' with your actual Render URL later!
+      const res = await fetch('https://YOUR-BACKEND.onrender.com/api/rag', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

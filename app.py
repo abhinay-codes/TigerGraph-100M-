@@ -28,8 +28,8 @@ TG_HOST = os.environ.get("TG_HOST", "https://your-savanna-url.tigergraph.cloud")
 TG_USERNAME = os.environ.get("TG_USERNAME", "tigergraph")
 TG_PASSWORD = os.environ.get("TG_PASSWORD", "your_password")
 TG_GRAPH = "FinancialGraph"
-GEMINI_API_KEY = "AIzaSyAFnFpNJGadfULSOuw4Bp-heRyspXP-ByM"
-os.environ["GEMINI_API_KEY"] = GEMINI_API_KEY
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+
 class QueryRequest(BaseModel):
     query: str
     company: str = None
@@ -104,4 +104,5 @@ async def execute_graph_rag(req: QueryRequest):
 
 if __name__ == "__main__":
     print("Starting GraphRAG Backend on port 8000...")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
