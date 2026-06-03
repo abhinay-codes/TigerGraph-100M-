@@ -119,5 +119,6 @@ Navigate to `http://localhost:8000` in your browser. Type a financial query into
 The secret sauce of this project is our custom GSQL query (`query.gsql`). 
 Instead of a basic 1-hop lookup, it utilizes a **Multi-Hop Reverse Traversal Algorithm**. It starts at a target company, finds all of their mapped Risk Factors, and then traverses *backwards* to find every single competitor that shares those exact same risks, delivering unparalleled market insight to the Gemini LLM.
 
+**Raw Dataset:** [Click here to download the 472MB financial_corpus.json](https://1drv.ms/u/c/b35b4e95396fabd0/IQD6XfBvvXImQo5CVNARUo6GAdvPLwGuadlgCY3F_HMEapI?e=xDVOeu)
 ---
 *Built with ❤️ for the TigerGraph Hackathon.*
