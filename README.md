@@ -28,7 +28,7 @@
 ## 💡 What is this?
 Traditional RAG (Retrieval-Augmented Generation) struggles with complex, multi-hop financial queries because it relies on flat vector similarity. 
 
-**This project solves that.** We built an enterprise-grade GraphRAG pipeline that ingests SEC EDGAR 10-K financial filings, extracts intricate corporate relationships (competitors, subsidiaries, risk factors) using **Gemini 2.5 Flash**, and stores them securely in **TigerGraph**. 
+**This project solves that.** We built a GraphRAG pipeline that ingests SEC EDGAR 10-K financial filings, extracts intricate corporate relationships (competitors, subsidiaries, risk factors) using **Gemini 2.5 Flash**, and stores them securely in **TigerGraph**. 
 
 The result? An AI that can answer complex questions like: *"What supply chain risks does Apple face, and which of their competitors are exposed to the exact same risks?"*
 
@@ -112,13 +112,13 @@ python scripts/app.py
 ```
 
 ### 3. Frontend Dashboard
-Navigate to `http://localhost:8000` in your browser. Type a financial query into the UI and watch the GraphRAG dynamically pull context from TigerGraph and generate a highly intelligent answer!
+Navigate to `http://localhost:8000` in your browser. Type a financial query into the UI and watch the GraphRAG dynamically pull context from TigerGraph and generate a context-aware answer.
 
 ---
 
 ## 🧙‍♂️ The Magic Query (GSQL)
-The secret sauce of this project is our custom GSQL query (`query.gsql`). 
-Instead of a basic 1-hop lookup, it utilizes a **Multi-Hop Reverse Traversal Algorithm**. It starts at a target company, finds all of their mapped Risk Factors, and then traverses *backwards* to find every single competitor that shares those exact same risks, delivering unparalleled market insight to the Gemini LLM.
+The core of this project is our custom GSQL query (`query.gsql`). 
+Instead of a basic 1-hop lookup, it utilizes a **Multi-Hop Reverse Traversal Algorithm**. It starts at a target company, finds all of their mapped Risk Factors, and then traverses *backwards* to find every single competitor that shares those exact same risks, allowing the LLM to compare companies that share common risk factors.
 
 ---
 *Built with ❤️ for the TigerGraph Hackathon.*
