@@ -7,14 +7,14 @@
   [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
   [![TigerGraph](https://img.shields.io/badge/TigerGraph-Cloud-orange.svg)](https://www.tigergraph.com/)
   [![Gemini API](https://img.shields.io/badge/Gemini-2.5%20Flash-green.svg)](https://deepmind.google/technologies/gemini/)
-  [![Tokens Processed](https://img.shields.io/badge/Tokens-105M+-red.svg)](#-the-100m-token-benchmark)
+  [![Graph Size](https://img.shields.io/badge/Graph_Size-692_Nodes-red.svg)](#-the-benchmark-data)
 </div>
 
 ---
 
 ## 📖 Table of Contents
 - [What is this?](#-what-is-this)
-- [The 100M+ Token Benchmark](#-the-100m-token-benchmark)
+- [The Benchmark Data](#-the-benchmark-data)
 - [System Architecture](#-system-architecture)
 - [Advanced Graph Schema](#-advanced-graph-schema)
 - [Quick Start Guide](#-quick-start-guide)
@@ -34,16 +34,17 @@ The result? An AI that can answer complex questions like: *"What supply chain ri
 
 ---
 
-## 🏆 The 100M+ Token Benchmark
-To prove real-world viability and satisfy the Hackathon's elite tier requirements, this project was successfully scaled and tested on over 100 million tokens of raw financial data.
+## 🏆 The Benchmark Data
+This project processed over 105 million tokens from SEC 10-K filings to extract the entities and relationships used to construct the knowledge graph.
 
 <details>
 <summary><b>Click here to view official benchmark metrics</b></summary>
 <br>
 
 * **Dataset Source:** `winterForestStump/10-K_sec_filings` (HuggingFace)
-* **Total Tokens Processed:** `105,001,658` tokens
+* **Total Tokens Processed:** `105,001,658` tokens (Raw Source Data)
 * **Total Documents:** `8,417` SEC 10-K Filings
+* **Knowledge Graph Size:** `692 Nodes and 502 Edges` (Derived from the processed 105M-token SEC filing corpus.)
 * **Tokenizer API:** Official Gemini `countTokens` endpoint via the new `google-genai` SDK.
 * *(See `scripts/benchmark_report.txt` for the official verification logs).*
 
@@ -119,6 +120,5 @@ Navigate to `http://localhost:8000` in your browser. Type a financial query into
 The secret sauce of this project is our custom GSQL query (`query.gsql`). 
 Instead of a basic 1-hop lookup, it utilizes a **Multi-Hop Reverse Traversal Algorithm**. It starts at a target company, finds all of their mapped Risk Factors, and then traverses *backwards* to find every single competitor that shares those exact same risks, delivering unparalleled market insight to the Gemini LLM.
 
-**Raw Dataset:** [Click here to download the 472MB financial_corpus.json](https://1drv.ms/u/c/b35b4e95396fabd0/IQD6XfBvvXImQo5CVNARUo6GAdvPLwGuadlgCY3F_HMEapI?e=xDVOeu)
 ---
 *Built with ❤️ for the TigerGraph Hackathon.*
