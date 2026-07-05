@@ -11,11 +11,7 @@ import pyTigerGraph as tg
 import chromadb
 from bert_score import score as bert_score_fn
 import warnings
-from download_db import download_and_extract_db
 warnings.filterwarnings("ignore")
-
-# Trigger DB download if it's missing (for ephemeral Render deployments)
-download_and_extract_db()
 
 app = FastAPI(title="Financial Corporate GraphRAG")
 
@@ -65,8 +61,8 @@ async def execute_basic_rag(req: QueryRequest):
             
         client_db = chromadb.PersistentClient(path=db_path)
         collection = client_db.get_collection(name="sec_filings")
-        
-        results = collection.query(query_texts=[req.query], n_results=3)
+        # In enterprise RAG, 15-20 chunks are typically required to cover enough semantic ground for complex queries.
+        results = collection.query(query_texts=[req.query], n_results=15)
         
         chunks = results['documents'][0]
         distances = results['distances'][0]
@@ -126,9 +122,9 @@ async def execute_graph_rag(req: QueryRequest):
         extracted_company = req.company
         if len(req.query.split()) > 3: # If it's a sentence instead of just a name
             try:
-                extraction_prompt = f"Extract ONLY the primary company name from this query. Do not include any other words. Query: '{req.query}'"
+                extraction_prompt = f"Extract ONLY the exact primary company name from this query. Preserve exact spelling and punctuation (e.g. if it says 'INC.', keep the period). Do not include any other words. Query: '{req.query}'"
                 extract_resp = client.models.generate_content(model='gemini-2.5-flash', contents=extraction_prompt)
-                extracted_company = extract_resp.text.strip()
+                extracted_company = extract_resp.text.strip().strip(",?\"'")
                 print(f"Agent extracted company name: {extracted_company}")
             except Exception as e:
                 print(f"Extraction failed: {e}")
@@ -139,8 +135,9 @@ async def execute_graph_rag(req: QueryRequest):
         
         # Step 2: Extract Graph Context based on user query
         try:
-            # Pass the RAW user query to TigerGraph. The GSQL query uses a LIKE clause to scan the sentence for exact company names.
-            graph_context = conn.runInstalledQuery("get_company_context", {"question": req.query})
+            # Pass the EXACT company name to TigerGraph to perfectly traverse the edges (using 'question' param to match installed query)
+            graph_context_raw = conn.runInstalledQuery("get_company_context", {"question": extracted_company})
+            graph_context_str = json.dumps(graph_context_raw, indent=2)
         except Exception as query_err:
             if "not found" in str(query_err).lower() or "404" in str(query_err):
                 return {"answer": "Error: Your query is not installed yet! Go to GraphStudio, click the 'Up Arrow' button next to Queries to install it.", "context_used": ""}
@@ -158,7 +155,7 @@ async def execute_graph_rag(req: QueryRequest):
         User Query: {req.query}
         
         TigerGraph Context:
-        {graph_context}
+        {graph_context_str}
         """
         
         response = client.models.generate_content(
@@ -173,7 +170,7 @@ async def execute_graph_rag(req: QueryRequest):
             in_tokens = out_tokens = 0
             
         try:
-            _, _, F1 = bert_score_fn([response.text], [graph_context], lang="en", verbose=False)
+            _, _, F1 = bert_score_fn([response.text], [graph_context_str], lang="en", verbose=False)
             bert_score_f1 = float(F1.item())
         except Exception as e:
             print(f"BERTScore Error: {e}")
@@ -181,7 +178,7 @@ async def execute_graph_rag(req: QueryRequest):
             
         return {
             "answer": response.text, 
-            "context_used": graph_context,
+            "context_used": graph_context_str,
             "input_tokens": in_tokens,
             "output_tokens": out_tokens,
             "bert_score": bert_score_f1
