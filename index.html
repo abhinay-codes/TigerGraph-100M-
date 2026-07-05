@@ -848,30 +848,19 @@ async function callTigerGraph(host, graph, token, queryName, question) {
   return data;
 }
 
-// ─── Simple BERTScore approximation (token overlap F1) ────────────────────────
-function bertScoreApprox(hypothesis, reference) {
-  if (!reference) return 0;
-  const tok = s => s.toLowerCase().split(/\W+/).filter(Boolean);
-  const h = new Set(tok(hypothesis));
-  const r = new Set(tok(reference));
-  let common = 0;
-  h.forEach(w => { if (r.has(w)) common++; });
-  const p = common / (h.size || 1);
-  const recall = common / (r.size || 1);
-  const f1 = 2 * p * recall / ((p + recall) || 1);
-  // Scale to typical BERTScore range 0.75–1.0
-  return 0.75 + f1 * 0.25;
-}
+// Real BERTScore is now calculated mathematically in the Python backend via HuggingFace's bert_score library.
 
 // ─── LLM-as-a-Judge ───────────────────────────────────────────────────────────
 async function judgeAnswer(provider, apiKey, question, answer) {
   try {
     const res = await callLLM(provider, apiKey,
-      'You are a strict and impartial benchmarking judge. You evaluate whether an AI assistant successfully answered a user query. Reply ONLY with the exact word PASS or FAIL.',
-      `User Question: ${question}\n\nAI Answer: ${answer}\n\nTask: Evaluate if the AI answer is factually sound, completely addresses the user's core intent, and does not contain hallucinations. Ignore phrases like 'based on the context'. If it fails to answer, or is dangerously vague, reply FAIL. Otherwise reply PASS.`
+      'You are a strict benchmarking judge. Reply ONLY with the exact word PASS or the exact word FAIL. No punctuation, no explanation.',
+      `User Question: ${question}\n\nAI Answer: ${answer}\n\nTask: Evaluate if the AI completely and accurately answered the user's specific question. To PASS, the AI MUST explicitly address the core intent of the question. If the AI provides irrelevant facts (like acquisitions) instead of answering the specific question asked, or if it says it cannot find the information, you MUST reply FAIL.`
     );
     const text = res.text.toUpperCase();
-    return text.includes('PASS') && !text.includes('FAIL');
+    console.log(`Judge Evaluation for Answer: "${answer.slice(0, 30)}..." -> Judge Output: "${text}"`);
+    if (text.includes('PASS')) return true;
+    return false;
   } catch { return null; }
 }
 
