@@ -1,5 +1,4 @@
-fastapi
-uvicorn
-pydantic
-google-genai
-pyTigerGraph
+google-genai>=0.1.2
+datasets>=2.14.0
+pydantic>=2.0.0
+pandas>=2.0.0

@@ -8,6 +8,11 @@ from pydantic import BaseModel
 from google import genai
 import uvicorn
 import pyTigerGraph as tg
+import pyTigerGraph as tg
+import chromadb
+from bert_score import score as bert_score_fn
+import warnings
+warnings.filterwarnings("ignore")
 
 app = FastAPI(title="Financial Corporate GraphRAG")
 
@@ -36,21 +41,81 @@ class QueryRequest(BaseModel):
     tg_host: str = None
     tg_token: str = None
     tg_graph: str = None
+    gemini_api_key: str = None
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui():
     with open("index.html", "r", encoding="utf-8") as f:
         return f.read()
 
+@app.post("/api/basic_rag")
+async def execute_basic_rag(req: QueryRequest):
+    api_key = req.gemini_api_key or os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        raise HTTPException(status_code=500, detail="Gemini API Key missing")
+    os.environ["GEMINI_API_KEY"] = api_key
+        
+    try:
+        db_path = os.path.join(os.path.dirname(__file__), "chroma_db")
+        if not os.path.exists(db_path):
+            raise HTTPException(status_code=500, detail="Vector DB not built yet.")
+            
+        client_db = chromadb.PersistentClient(path=db_path)
+        collection = client_db.get_collection(name="sec_filings")
+        
+        results = collection.query(query_texts=[req.query], n_results=3)
+        
+        chunks = results['documents'][0]
+        distances = results['distances'][0]
+        metadatas = results['metadatas'][0]
+        
+        context_parts = ["[Retrieved context - top-3 chunks from vector store]"]
+        for i, (chunk, dist, meta) in enumerate(zip(chunks, distances, metadatas)):
+            sim = max(0.0, 1.0 - (dist / 2.0))
+            context_parts.append(f"Chunk {i+1} (similarity {sim:.2f}) [Company: {meta.get('company')}]: {chunk}")
+            
+        retrieved_context = "\n\n".join(context_parts)
+        
+        genai_client = genai.Client()
+        prompt = f"You are a helpful assistant. Use the retrieved context below to answer the question accurately. Keep your answer concise (1-2 sentences maximum) so it does not get cut off.\n\nContext:\n{retrieved_context}\n\nQuestion: {req.query}"
+        
+        response = genai_client.models.generate_content(model='gemini-2.5-flash', contents=prompt)
+        
+        try:
+            in_tokens = response.usage_metadata.prompt_token_count
+            out_tokens = response.usage_metadata.candidates_token_count
+        except:
+            in_tokens = out_tokens = 0
+        
+        try:
+            _, _, F1 = bert_score_fn([response.text], [retrieved_context], lang="en", verbose=False)
+            bert_score_f1 = float(F1.item())
+        except Exception as e:
+            print(f"BERTScore Error: {e}")
+            bert_score_f1 = 0.0
+        
+        return {
+            "answer": response.text, 
+            "context_used": retrieved_context,
+            "input_tokens": in_tokens,
+            "output_tokens": out_tokens,
+            "bert_score": bert_score_f1
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/api/rag")
 async def execute_graph_rag(req: QueryRequest):
-    if not GEMINI_API_KEY:
+    api_key = req.gemini_api_key or os.environ.get("GEMINI_API_KEY")
+    if not api_key:
         raise HTTPException(status_code=500, detail="Gemini API Key missing")
+    os.environ["GEMINI_API_KEY"] = api_key
         
     try:
         # Use UI provided values or fallback to env
         host = req.tg_host or TG_HOST
-        token = req.tg_token or "22s_qfLJ_rekK2RnwQJSdRDGXlLHZXibJyZ7FvB0"
+        token = req.tg_token or os.environ.get("TG_TOKEN", "")
         graph = req.tg_graph or TG_GRAPH
         
         # Step 0: Extract the true company name using an Agentic LLM call
@@ -71,7 +136,8 @@ async def execute_graph_rag(req: QueryRequest):
         
         # Step 2: Extract Graph Context based on user query
         try:
-            graph_context = conn.runInstalledQuery("get_company_context", {"company_name": extracted_company})
+            # Pass the RAW user query to TigerGraph. The GSQL query uses a LIKE clause to scan the sentence for exact company names.
+            graph_context = conn.runInstalledQuery("get_company_context", {"question": req.query})
         except Exception as query_err:
             if "not found" in str(query_err).lower() or "404" in str(query_err):
                 return {"answer": "Error: Your query is not installed yet! Go to GraphStudio, click the 'Up Arrow' button next to Queries to install it.", "context_used": ""}
@@ -97,7 +163,26 @@ async def execute_graph_rag(req: QueryRequest):
             contents=prompt
         )
         
-        return {"answer": response.text, "context_used": graph_context}
+        try:
+            in_tokens = response.usage_metadata.prompt_token_count
+            out_tokens = response.usage_metadata.candidates_token_count
+        except:
+            in_tokens = out_tokens = 0
+            
+        try:
+            _, _, F1 = bert_score_fn([response.text], [graph_context], lang="en", verbose=False)
+            bert_score_f1 = float(F1.item())
+        except Exception as e:
+            print(f"BERTScore Error: {e}")
+            bert_score_f1 = 0.0
+            
+        return {
+            "answer": response.text, 
+            "context_used": graph_context,
+            "input_tokens": in_tokens,
+            "output_tokens": out_tokens,
+            "bert_score": bert_score_f1
+        }
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

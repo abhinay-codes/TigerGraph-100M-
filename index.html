@@ -440,7 +440,7 @@
   <div class="header-left">
     <div class="wordmark">GraphRAG · Scale Edition</div>
     <div class="title">Financial <span>Intelligence</span></div>
-    <div class="subtitle">100M+ Token Scale: LLM-Only vs Basic RAG vs TigerGraph GraphRAG</div>
+    <div class="subtitle">100M+ Token Source Data → 692 Node Knowledge Graph: LLM-Only vs Basic RAG vs TigerGraph GraphRAG</div>
   </div>
   <div class="tg-badge">
     <span class="tg-dot"></span>
@@ -454,26 +454,24 @@
   <div class="config-grid">
     <div class="field">
       <label>Cluster Host</label>
-      <input type="text" id="tg-host" placeholder="https://your-cluster.i.tgcloud.io" value="https://tg-8062deb8-646c-4ebd-832d-e09542227656.tg-3452941248.i.tgcloud.io" />
+      <input type="text" id="tg-host" placeholder="https://your-cluster.i.tgcloud.io" value="https://tg-8a493b67-4330-406c-81c2-d1398562a1ec.tg-3452941248.i.tgcloud.io" />
     </div>
     <div class="field">
       <label>Graph Name</label>
-      <input type="text" id="tg-graph" placeholder="FinancialGraph" value="FinancialGraph" />
+      <input type="text" id="tg-graph" placeholder="TIgerrag" value="TIgerrag" />
     </div>
     <div class="field">
       <label>RESTPP Token</label>
-      <input type="password" id="tg-token" placeholder="Bearer token from Admin Portal" value=" eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmhpbmF5cHJhdGFwc2luZ2g0N0BnbWFpbC5jb20iLCJpYXQiOjE3ODA0MTM5MDAsImV4cCI6MTc4MTAxODcwNSwiaXNzIjoiVGlnZXJHcmFwaCJ9.PGx9RrW_3NMh4Yj3F44TOsKN21-udhh3utmSuxRH0js" />
+      <input type="password" id="tg-token" placeholder="Bearer token from Admin Portal" />
     </div>
     <div class="field">
       <label>GraphRAG Query Name</label>
-      <input type="text" id="tg-query" placeholder="graphrag_query" />
+      <input type="text" id="tg-query" placeholder="get_company_context" value="get_company_context" />
     </div>
     <div class="field">
       <label>LLM Provider</label>
-      <select id="llm-provider">
-        <option value="anthropic">Anthropic (Claude)</option>
-        <option value="openai">OpenAI (GPT-4o)</option>
-        <option value="gemini">Google (Gemini)</option>
+      <select id="llm-provider" disabled>
+        <option value="gemini">Google (Gemini 2.5 Flash)</option>
       </select>
     </div>
     <div class="field">
@@ -869,14 +867,11 @@ function bertScoreApprox(hypothesis, reference) {
 async function judgeAnswer(provider, apiKey, question, answer) {
   try {
     const res = await callLLM(provider, apiKey,
-      'You are a lenient evaluator. Reply with literally just the word "PASS" or "FAIL". Do not write any other words or explanations.',
-      `Question: ${question}\nAnswer: ${answer}\nDoes this answer address the core question? Ignore missing references to 'uploaded documents' or 'context'. Reply PASS or FAIL.`
+      'You are a strict and impartial benchmarking judge. You evaluate whether an AI assistant successfully answered a user query. Reply ONLY with the exact word PASS or FAIL.',
+      `User Question: ${question}\n\nAI Answer: ${answer}\n\nTask: Evaluate if the AI answer is factually sound, completely addresses the user's core intent, and does not contain hallucinations. Ignore phrases like 'based on the context'. If it fails to answer, or is dangerously vague, reply FAIL. Otherwise reply PASS.`
     );
     const text = res.text.toUpperCase();
-    // Bulletproof hackathon logic:
-    if (text.includes('PASS')) return true;
-    if (text.includes('FAIL')) return false;
-    return true; // Default to PASS if the LLM just rambled
+    return text.includes('PASS') && !text.includes('FAIL');
   } catch { return null; }
 }
 
@@ -914,7 +909,7 @@ async function runAll() {
       const tokens = r.inputTokens + r.outputTokens;
       log(`P1 ← ${tokens} tokens, ${lat.toFixed(1)}s`, 'ok');
       const pass = await judgeAnswer(provider, apiKey, query, r.text);
-      const bert = bertScoreApprox(r.text, query);
+      const bert = 0.0; // LLM-Only has no context to ground against
       renderAnswer(1, r.text, tokens, lat, bert, pass, provider);
       return { tokens, cost: (r.inputTokens/1000)*PRICING[provider].input + (r.outputTokens/1000)*PRICING[provider].output, bert };
     } catch(e) {
@@ -924,34 +919,41 @@ async function runAll() {
     }
   })();
 
-  // ── Pipeline 2: Basic RAG (simulated retrieval context) ───────────────────
+  // ── Pipeline 2: Basic RAG (Vector Database Retrieval) ───────────────────
   const p2 = (async () => {
     try {
-      log('P2 → Simulating vector retrieval + LLM synthesis', '');
-      // In a real build: embed query → query vector store → retrieve top-k chunks → pass as context
-      // Standard vector RAG usually retrieves 3-5 chunks of 500 tokens each. We simulate a realistic chunk here:
-      const fakeContext = `[Retrieved context – top-3 chunks from vector store based on cosine similarity]
-      
-Chunk 1: A general introduction to the topic. People often ask ${query} and the answer varies depending on the context. Scientifically, it requires analyzing the physical structure of the entity in question. By definition, a fruit is the seed-bearing structure in flowering plants formed from the ovary after flowering. This distinguishes it from other plant parts like roots or stems. (similarity 0.87)
-
-Chunk 2: Further background information. The development process involves several stages, beginning with initial growth and ending with maturity. In many species, this serves as a protective layer and a dispersal mechanism for the seeds. Agricultural practices rely heavily on seasonal cycles to harvest these effectively... (similarity 0.82)
-
-Chunk 3: Culinary vs Scientific definitions. In practical terms, the definition is less strict. Professionals often classify sweet items differently from savory items, leading to common misconceptions and debates. For example, tomatoes and avocados are biologically fruits, but are treated as vegetables in the kitchen... (similarity 0.79)`;
+      log('P2 → Calling local Python Backend (/api/basic_rag) for Vector Retrieval', '');
       const t0 = Date.now();
-      const r = await callLLM(provider, apiKey,
-        `You are a helpful assistant. Use the retrieved context below to answer the question accurately. Keep your answer concise (1-2 sentences maximum) so it does not get cut off.\n\n${fakeContext}`,
-        query
-      );
+      
+      const res = await fetch('http://localhost:8000/api/basic_rag', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: query, gemini_api_key: apiKey })
+      });
+      
+      if (!res.ok) {
+        const errTxt = await res.text();
+        throw new Error(`Backend Error ${res.status}: ${errTxt}`);
+      }
+      
+      const data = await res.json();
+      const finalAnswer = data.answer;
+      
       const lat = (Date.now() - t0) / 1000;
-      const tokens = r.inputTokens + r.outputTokens;
-      log(`P2 ← ${tokens} tokens, ${lat.toFixed(1)}s`, 'ok');
-      const pass = await judgeAnswer(provider, apiKey, query, r.text);
-      const bert = bertScoreApprox(r.text, query);
-      renderAnswer(2, r.text, tokens, lat, bert, pass, provider);
-      return { tokens, cost: (r.inputTokens/1000)*PRICING[provider].input + (r.outputTokens/1000)*PRICING[provider].output, bert };
-    } catch(e) {
-      log('P2 error: ' + e.message, 'err');
-      renderError(2, e.message);
+      
+      // We now have exact tokens from the backend!
+      const exactTokens = (data.input_tokens || 0) + (data.output_tokens || 0); 
+      
+      log(`P2 ← Backend returned Vector RAG response in ${lat.toFixed(1)}s`, 'ok');
+      
+      const pass = await judgeAnswer(provider, apiKey, query, finalAnswer);
+      const bert = data.bert_score || 0.0;
+      renderAnswer(2, finalAnswer, exactTokens, lat, bert, pass, provider);
+      
+      return { tokens: exactTokens, cost: ((data.input_tokens||0)/1000)*PRICING[provider].input + ((data.output_tokens||0)/1000)*PRICING[provider].output, bert };
+    } catch(err) {
+      log('P2 error: ' + err.message, 'err');
+      renderError(2, err.message);
       return null;
     }
   })();
@@ -963,7 +965,7 @@ Chunk 3: Culinary vs Scientific definitions. In practical terms, the definition 
       const t0 = Date.now();
       
       // REPLACE 'https://YOUR-BACKEND.onrender.com' with your actual Render URL later!
-      const res = await fetch('https://tigergraph-100m.onrender.com/api/rag', {
+      const res = await fetch('http://localhost:8000/api/rag', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -971,7 +973,8 @@ Chunk 3: Culinary vs Scientific definitions. In practical terms, the definition 
             company: query,
             tg_host: tgHost,
             tg_token: tgToken,
-            tg_graph: tgGraph
+            tg_graph: tgGraph,
+            gemini_api_key: apiKey
         }) // Passing all config to backend
       });
       
@@ -985,17 +988,17 @@ Chunk 3: Culinary vs Scientific definitions. In practical terms, the definition 
       
       const lat = (Date.now() - t0) / 1000;
       
-      // Since backend doesn't return exact tokens yet, we estimate for the UI
-      const estTokens = Math.round((query.length + finalAnswer.length) / 3) + 150; 
+      // We now have exact tokens from the backend!
+      const exactTokens = (data.input_tokens || 0) + (data.output_tokens || 0); 
       
       log(`P3 ← Backend returned GraphRAG response in ${lat.toFixed(1)}s`, 'ok');
       document.getElementById('hops3').innerHTML = `<div class="elabel">Retrieval</div><div class="eval-val">Graph · 2-hop</div>`;
       
       const pass = await judgeAnswer(provider, apiKey, query, finalAnswer);
-      const bert = bertScoreApprox(finalAnswer, query);
-      renderAnswer(3, finalAnswer, estTokens, lat, bert, pass, provider);
+      const bert = data.bert_score || 0.0;
+      renderAnswer(3, finalAnswer, exactTokens, lat, bert, pass, provider);
       
-      return { tokens: estTokens, cost: 0.0001, bert };
+      return { tokens: exactTokens, cost: ((data.input_tokens||0)/1000)*PRICING[provider].input + ((data.output_tokens||0)/1000)*PRICING[provider].output, bert };
     } catch(err) {
       log('P3 error: ' + err.message, 'err');
       renderError(3, err.message);
