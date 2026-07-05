@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 DB_DIR = "./chroma_db"
 CORPUS_FILE = "financial_corpus.jsonl"
-LIMIT = 1000  # We process a subset of 1000 chunks for the local demo to avoid hours of CPU embedding time
+LIMIT = int(os.environ.get("EMBED_LIMIT", "1000"))  # Configurable limit for local dev vs production
 
 def build_vector_db():
     print("Initializing ChromaDB (this may download the embedding model if first run)...")
@@ -35,7 +35,7 @@ def build_vector_db():
                 ids.append(f"doc_{count}")
                 count += 1
                 
-                if count >= LIMIT:
+                if LIMIT > 0 and count >= LIMIT:
                     break
             except Exception as e:
                 print(f"Error parsing line: {e}")
