@@ -11,7 +11,12 @@ import pyTigerGraph as tg
 import chromadb
 from bert_score import score as bert_score_fn
 import warnings
+from download_db import download_and_extract_db
+
 warnings.filterwarnings("ignore")
+
+# Trigger DB download if it's missing (for HF Spaces)
+download_and_extract_db()
 
 app = FastAPI(title="Financial Corporate GraphRAG")
 
